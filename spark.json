@@ -1,7 +1,7 @@
 {
-  "name": "uber-library-example",
-  "author": "Joe Goggins <joe@spark.io>",
-  "license": "MIT",
+  "name": "ethernet",
+  "author": "peekay123 <john@doe.io>",
+  "license": "BSD",
   "version": "0.0.10",
-  "description": "A simple library that illustrates coding conventions of a Spark Library"
+  "description": "Arduino port of Ethernet library"
 }
