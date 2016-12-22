@@ -32,7 +32,7 @@ int EthernetClient::connectclient(const char* host, uint16_t port) {
   dns.begin(Ethernet.dnsServerIP());
   ret = dns.getHostByName(host, remote_addr);
   if (ret == 1) {
-    return connect(remote_addr, port);
+    return connecttcp(remote_addr, port);
   } else {
     return ret;
   }
@@ -57,7 +57,7 @@ int EthernetClient::connectclient(IPAddress ip, uint16_t port) {
   if (_srcport == 0) _srcport = 49152;          //Use IANA recommended ephemeral port range 49152-65535
   socket(_sock, SnMR::TCP, _srcport, 0);
 
-  if (!::connect(_sock, rawIPAddress(ip), port)) {
+  if (!::connecttcp(_sock, rawIPAddress(ip), port)) {
     _sock = MAX_eSOCK_NUM;
     return 0;
   }
@@ -131,7 +131,7 @@ void EthernetClient::stop() {
     return;
 
   // attempt to close the connection gracefully (send a FIN to other side)
-  disconnect(_sock);
+  disconnecttcp(_sock);
   unsigned long start = millis();
 
   // wait up to a second for the connection to close
