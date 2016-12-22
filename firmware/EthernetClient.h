@@ -6,10 +6,10 @@
 #include "application.h"
 
 //#include "Print.h"
-#include "Client.h"
+#include "BaseClient.h"
 //#include "IPAddress.h"
 
-class EthernetClient : public Client {
+class EthernetClient : public BaseClient {
 
 public:
   EthernetClient();
