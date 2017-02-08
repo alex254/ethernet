@@ -37,7 +37,9 @@
 
 #include "application.h"
 //#include "Stream.h"
-//#include "IPAddress.h"
+#ifndef IPADDRESS_H
+  #include "IPAddress.h"
+#endif
 
 class eUDP : public Stream {
 
