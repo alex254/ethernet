@@ -32,7 +32,9 @@ int EthernetClient::connect(const char* host, uint16_t port) {
   dns.begin(Ethernet.dnsServerIP());
   ret = dns.getHostByName(host, remote_addr);
   if (ret == 1) {
+
     return connect(remote_addr, port);
+
   } else {
     return ret;
   }

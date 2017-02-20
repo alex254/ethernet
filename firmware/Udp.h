@@ -36,8 +36,14 @@
 #define udp_h
 
 #include "application.h"
-//#include "Stream.h"
-//#include "IPAddress.h"
+
+#ifndef STREAM_H
+  #include "Stream.h"
+#endif
+
+#ifndef IPADDRESS_H
+  #include "IPAddress.h"
+#endif
 
 class eUDP : public Stream {
 
