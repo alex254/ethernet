@@ -78,7 +78,7 @@ uint8_t listen(SOCKET s)
  *
  * @return	1 for success else 0.
  */
-uint8_t connect(SOCKET s, uint8_t * addr, uint16_t port)
+uint8_t connecttcp(SOCKET s, uint8_t * addr, uint16_t port)
 {
   if
     (
@@ -104,7 +104,7 @@ uint8_t connect(SOCKET s, uint8_t * addr, uint16_t port)
  * @brief	This function used for disconnect the socket and parameter is "s" which represent the socket number
  * @return	1 for success else 0.
  */
-void disconnect(SOCKET s)
+void disconnecttcp(SOCKET s)
 {
   // SPI.beginTransaction(SPI_ETHERNET_SETTINGS);
   W5100.execCmdSn(s, Sock_DISCON);
